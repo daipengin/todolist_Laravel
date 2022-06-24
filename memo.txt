@@ -1,0 +1,7 @@
+//git操作
+
+git add -A
+git commit -m "メッセージ"
+git push
+
+
