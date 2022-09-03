@@ -5,3 +5,6 @@ git commit -m "メッセージ"
 git push
 
 
+composer install
+
+php artisan serve
