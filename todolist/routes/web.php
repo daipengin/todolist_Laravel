@@ -18,6 +18,7 @@ use App\Http\Controllers\HellosController;
 //3.ビューとテンプレート
 Route::get('hellos/id/{id?}',[HellosController::class,'index']);
 Route::get('hellos/query',[HellosController::class,'query']);
+Route::post('hellos',[HellosController::class,'post']);
 
 
 
