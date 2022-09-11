@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>@yield </title>
+    <title>@yield('title') </title>
     <style>
         body{
             font-size:16pt;
@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-    <h1>@yield</h1>
+    <h1>@yield('title')</h1>
     @section('menubar')
     <h2 class = "menutitle">めにゅー</h2>
     <ul>

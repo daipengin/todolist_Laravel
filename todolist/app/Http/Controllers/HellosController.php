@@ -15,12 +15,24 @@ class HellosController extends Controller
         ];
         return view('hello.index',$date);
     }
+    
+    public function index2(){
+        $data = [
+            ['name'=>'tarou','mail'=>'tarou@yamada'],
+            ['name'=>'jiro','mail'=>'jiro@yamada'],
+            ['name'=>'sabu','mail'=>'sabu@yamada']
+        ];
+        return view('hello.index2',['data'=>$data,'message'=>'コントローラーからのめっセージ']);
+    }
+
+
 
     public function query(Request $request){
         $date = [
             'msg'=>'これはコントローラーからのメッセージ',
             'msg2'=>'二つ目のメッセージ',
-            'id'=>$request ->id
+            'id'=>$request ->id,
+            'date' =>['one','two','three','four','five']
         ];
         return view('hello.index',$date);
     }
@@ -30,8 +42,8 @@ class HellosController extends Controller
         $date = [
             'msg' => 'こんにちは'. $msg.'さん！',
             'msg2'=>'ここはPOSTのページ',
-            'id'=>''
-
+            'id'=>'',
+            'date' =>['one','two','three','four','five']
         ];
         return view('hello.index',$date);
     }

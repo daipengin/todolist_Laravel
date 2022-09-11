@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\HellorController;
 use App\Http\Controllers\HellosController;
+use App\Http\Middleware\HelloMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,14 @@ use App\Http\Controllers\HellosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//4リクエストレスポンス
+Route::get('hellor',[HellorController::class,'index'])->middleware(HelloMiddleware::class);
+
+
 
 //3.ビューとテンプレート
-Route::get('hellos/id/{id?}',[HellosController::class,'index']);
+Route::get('hellos/id/{id?}',[HellosController::class,'index3']);
+Route::get('hellos/index2',[HellosController::class,'index2']);
 Route::get('hellos/query',[HellosController::class,'query']);
 Route::post('hellos',[HellosController::class,'post']);
 
