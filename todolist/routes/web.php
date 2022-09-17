@@ -18,7 +18,8 @@ use App\Http\Middleware\HelloMiddleware;
 */
 //4リクエストレスポンス
 Route::get('hellor',[HellorController::class,'index'])->middleware(HelloMiddleware::class);
-
+Route::get('hellor/mes',[HellorController::class,'index2']);
+Route::post('hellor/mes',[HellorController::class,'post']);
 
 
 //3.ビューとテンプレート
