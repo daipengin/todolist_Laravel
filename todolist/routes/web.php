@@ -5,6 +5,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\HellorController;
 use App\Http\Controllers\HellosController;
 use App\Http\Middleware\HelloMiddleware;
+use App\Http\Controllers\DatabaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,18 @@ use App\Http\Middleware\HelloMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//5データベースの利用
+Route::get('database',[DatabaseController::class,'index']);
+Route::get('database/2',[DatabaseController::class,'index2']);
+Route::get('database/2/add',[DatabaseController::class,'add']);
+Route::post('database/2/add',[DatabaseController::class,'create']);
+Route::get('database/2/edit',[DatabaseController::class,'edit']);
+Route::post('database/2/edit',[DatabaseController::class,'update']);
+Route::get('database/2/del',[DatabaseController::class,'del']);
+Route::post('database/2/del',[DatabaseController::class,'remove']);
+
+
+
 //4リクエストレスポンス
 Route::get('hellor',[HellorController::class,'index'])->middleware(HelloMiddleware::class);
 Route::get('hellor/mes',[HellorController::class,'index2']);

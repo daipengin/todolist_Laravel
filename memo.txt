@@ -9,3 +9,4 @@ composer install
 
 php artisan serve
 
+php artisan make:controller DatabaseController

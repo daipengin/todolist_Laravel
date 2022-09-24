@@ -1,0 +1,22 @@
+@extends('layouts.dbapp')
+@section('title','Delete')
+@section('menubar')
+    @parent
+    削除ページ
+@endsection
+@section('content')
+<form action="/database/2/del" method="post">
+<table>
+    @csrf
+    <input type="hidden" name ="id" value="{{$form->id}}">
+    <tr><th>Name:</th><td>{{$form->name}}</td></tr>
+    <tr><th>Mail:</th><td>{{$form->mail}}</td></tr>
+    <tr><th>Age :</th><td>{{$form->age}}</td></tr>
+    <tr><th></th><td><input type="submit" value="send"></td></tr>
+</table>
+
+
+@endsection
+@section('footer')
+copyright 2022
+@endsection
